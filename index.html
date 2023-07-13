@@ -7,8 +7,19 @@
     <title>Calender</title>
 
     <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            /* border: 2px solid black; */
+        }
+
         .month {
-            /* width: 768px; */
+            width: 400px;
             margin: auto;
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -21,8 +32,9 @@
         }
 
         .date,
-        .week {
-            background-color: rgb(230, 230, 230);
+        .week,
+        .fade {
+            /* background-color: rgb(230, 230, 230); */
             /* margin: auto; */
             display: flex;
             justify-content: center;
@@ -30,10 +42,26 @@
             height: 40px;
             width: 40px;
             border-radius: 50%;
+            /* padding: 10px; */
+            /* margin: 10px; */
+        }
+
+
+
+
+        .date:hover {
+            background-color: rgb(147, 147, 255);
+            color: white;
+        }
+
+        .date:nth-child(7n+6):hover,
+        .date:nth-child(7n+7):hover {
+            background-color: rgb(255, 147, 147);
+            color: white;
         }
 
         .fade {
-            background-color: rgb(245, 245, 245);
+            /* background-color: rgb(245, 245, 245); */
             color: rgb(170, 170, 170);
             /* opacity: 0.5; */
         }
@@ -41,26 +69,16 @@
         .holyday,
         .date:nth-child(7n+6),
         .date:nth-child(7n+7) {
-            background-color: rgb(255, 147, 147);
-            color: white;
-        }
-
-        .date:hover {
-            background-color: rgb(147, 147, 255);
-            color: white;
-        }
-
-        .days {
-            display: flex;
-            gap: 20px;
-            width: 768px;
-            margin-bottom: 10px;
+            color: rgb(224, 0, 0);
+            /* background-color: rgb(255, 147, 147);
+            color: white; */
         }
     </style>
 </head>
 
 <body>
-    <div class="days">
+
+    <div class="month">
         <div class="week">Su</div>
         <div class="week">Mo</div>
         <div class="week">Tu</div>
@@ -68,11 +86,8 @@
         <div class="week">Th</div>
         <div class="week holyday">Fr</div>
         <div class="week holyday">Sa</div>
-    </div>
-    <div class="month">
-
-        <div class="date fade">29</div>
-        <div class="date fade">30</div>
+        <div class="fade">29</div>
+        <div class="fade">30</div>
         <div class="date">01</div>
         <div class="date">02</div>
         <div class="date">03</div>
@@ -104,8 +119,8 @@
         <div class="date">29</div>
         <div class="date">30</div>
         <div class="date">31</div>
-        <div class="date fade">01</div>
-        <div class="date fade">02</div>
+        <div class="fade">01</div>
+        <div class="fade">02</div>
     </div>
 </body>
 
